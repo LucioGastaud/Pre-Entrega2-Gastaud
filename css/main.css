@@ -1,0 +1,478 @@
+html {
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  img {
+    max-width: 100%;
+  }
+  
+  /*El h1 de abajo es solo de la html FAQ*/
+  h1 {
+    display: block;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+  }
+  
+  
+  
+  #grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas: "header     header      header"
+     "carrusel   carrusel    carrusel"
+      "conteiner  conteiner   conteiner" 
+      "banner     centralimg  banner2" 
+      "footer     footer      footer";
+    margin: 1rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    background-color: #F3D8C7;
+    color: white;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      
+  
+  }
+  /*Arriba esta la grid y aca abajo la clase grilla que también se aplica a la section de la grid*/
+  .grilla{
+      padding:0rem ; 
+      box-shadow: 0px 10px 10px 0px gray;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+     
+  }
+  
+  .container {
+     background-color: #EFE5DC;
+      box-sizing: none;
+      
+  }
+  
+  
+  #header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+  
+  
+  
+  }
+  
+  .navegacion {
+      grid-area: navegacion;
+  }
+  
+  
+  /*Una grid aparte para la section*/
+  #firstheader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "imagen   empty  domicilio" "navegacion navegacion navegacion";
+    width: 100%;
+  }
+  
+  .encabezado {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .imagen {
+    grid-area: imagen;
+    width: 10rem;
+    height: 10rem;
+    justify-content: baseline;
+    padding: 1rem;
+  }
+  
+  .header2 {
+    grid-area: domicilio;
+    text-align: right;
+    padding: 2rem;
+    font-size: 0.8rem;
+    font-weight: 450;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  #carrusel {
+    grid-area: carrusel;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  
+  .conteiner1 img {
+    height: 25rem;
+    width: 25rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    margin-top: none;
+  }
+  
+  .conteiner1 img:hover {
+    height: 30rem;
+    width: 30rem;
+    transition: 2s;
+  }
+  
+  #conteiner {
+    grid-area: conteiner;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .conteiner2 {
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: #008425;
+    background-image: url(../img/medio-ambiente.png);
+    background-size: cover;
+  }
+  
+  #central {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row: auto;
+      grid-template-areas: 
+      "banner centralimg banner2";
+  }
+  
+  /*Todas estas queris son del index*/
+  @media screen and (max-width: 991px) {
+      #central {display: flex; flex-direction: column; align-items: center; text-align: center;}
+      
+  }
+  
+  @media screen and (max-width: 490px) {
+    .conteiner1 img {width: 15rem; height: 15rem;}
+    .conteiner1 img:hover {
+      height: 17rem;
+      width: 17rem;
+       }
+  
+    #centralimg img { width: 15rem; height: 15rem;}    
+  
+    body { 
+  
+      margin: 1.4rem!important
+      ;
+      margin-right: 2rem !important
+      ;
+      margin-left: 2rem !important;
+    }
+    
+    }
+    
+    @media screen and (max-width: 375px) {
+      .conteiner1 img {width: 15rem; height: 15rem;}
+      .conteiner1 img:hover {
+        height: 15rem;
+        width: 15rem;
+        
+      }
+      body { 
+    
+        margin: 2.5!important
+        ;
+        margin-right: 0!important
+        ;
+      }
+      #centralimg img  {
+        height: 15rem; width: 15rem;
+      }
+    
+  }
+  
+  #banner {
+    grid-area: banner;
+    padding: 2rem;
+  }
+  
+  #centralimg {
+    grid-area: centralimg;
+    height: 30rem;
+    width: 30rem;
+    padding: 4rem;
+  }
+  
+  #centralimg img {
+    border-radius: 2rem;
+  }
+  
+  #centralimg:hover {
+    height: 31rem; width: 31rem;
+    transition: 1s;
+  }
+  
+  #banner2 {
+    grid-area: banner2;
+    padding: 2rem;
+  }
+  
+  /*El footer hecho con otra grid tambien*/
+  #footer {
+    grid-area: footer;
+    margin-top: 2rem;
+    border-top: 1px solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr auto;
+    grid-template-areas: "contacto oferta sucursal" "contacto oferta sucursal" "contacto oferta sucursal" "pie      pie    pie";
+    color: white;
+  }
+  
+  /*Esta queri tambien es del index pero del footer*/
+  @media screen and (max-width: 768px) {
+      #footer {display: flex; flex-direction: column; align-items: center; margin-left: 0;}
+  
+  }
+  
+  
+  #contacto {
+    grid-area: contacto;
+    margin: 1rem;
+    padding: 1rem;
+    color: white;
+  }
+  
+  .buscar h3 {
+    border-bottom: 1px solid white;
+    padding-bottom: 0.7rem;
+  }
+  
+  .redes img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.4rem;
+    margin-left: 0.4rem;
+  }
+  
+  .redes h3 {
+    border-bottom: 1px solid white;
+    margin-top: 2rem;
+    padding-bottom: 0.7rem;
+  }
+  
+  .datos h3 {
+    margin-top: 2rem;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.7rem;
+  }
+  
+  .datos p {
+    margin: 0;
+  }
+  
+  .datos div {
+    margin-top: 1rem;
+  }
+  
+  #oferta {
+    grid-area: oferta;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+  
+  .ultimaoferta h3 {
+    margin-top: 1;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.7rem;
+  }
+  
+  .ultimaoferta img {
+    height: 15rem;
+    width: 15rem;
+    margin-left: 2.5rem;
+  }
+  
+  .mediosdepago h3 {
+    margin-top: 1;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.7rem;
+  }
+  
+  #sucursal {
+    grid-area: sucursal;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    color: white;
+    padding: 1rem;
+  }
+  
+  #sucursal h3 {
+    margin-top: 1;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.7rem;
+  }
+  
+  .datafiscal img {
+    height: 7rem;
+    width: 5rem;
+  }
+  
+  #pie {
+    grid-area: pie;
+    background-color: grey;
+    font-size: 0.8rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  #pie img {
+    width: 5rem;
+    width: 5rem;
+  }
+  
+  /*Aca empieza el codigo aparte para las otras html que no sean index*/
+  
+  .tarjetas {
+      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .tarjetas img:hover{
+      height: 25rem;
+      width: 25rem;
+      transition: 2s;
+  }
+  
+  .fila1 {
+      display: flex;
+      grid-area: carrusel;
+      margin-top: 4rem;
+      gap: 2rem;
+      justify-content: center;
+  }
+  
+  /*Estas queries son de las cards*/
+  @media screen and (max-width: 1199px) {
+          .fila1{ display: flex; flex-direction: column; }
+          .fila2-1{display: flex; flex-direction: column;}
+          .fila2-2{display: flex; flex-direction: column;}
+          
+  }
+  
+  
+  .fila1 img{
+      height: 20rem; width: 20rem;
+      border-radius: 2rem;
+      box-shadow: 0px 5px 5px 0px black;
+  }
+  
+  .fila1 h2, .fila2 h2{
+      font-weight: 300;
+  }
+  
+  .tarjeta1, .tarjeta2, .tarjeta3, .tarjeta4, .tarjeta5, .tarjeta6, .tarjeta7, .tarjeta8, .tarjeta9 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      gap: 1rem;
+     
+  }
+  
+  .fila2 {
+      grid-area: conteiner;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-direction: column;
+  }
+  
+  .fila2 img{
+      height: 20rem; width: 20rem;
+      border-radius: 2rem;
+      box-shadow: 0px 5px 5px 0px black;
+  }
+  
+  .fila2-1, .fila2-2 {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+  }
+  
+  .accordion {
+      margin-top: 4rem;
+      width: 50%;
+  }
+  
+  .preguntas1 {
+      display: flex;
+      margin-top: .5rem;
+      padding: 2rem;
+  }
+  
+  .signopregunta {
+      height: 22rem; width: 22rem;
+      margin-top: 14rem;
+      margin-left: 2rem;
+  }
+  
+  .faq1-1 p{
+     padding: .4rem;
+     border-bottom: 1px solid grey;
+  
+  }
+  
+  .faq1-1 h4,h5{
+      border-bottom: 1px solid grey;
+      background-color: #F8F9FA;
+      border-TOP: 1px solid grey;
+      padding: .4rem;
+  }
+  
+  .faq1-1 h5:hover {
+      font-size: 1.5rem;
+      transition: 2s;
+  }
+  
+  .is a,i{
+      margin-right: 2rem;
+  }
+  
+  .is a,i:hover {
+      font-size: 1.3rem;
+      transition: 2s;
+      text-align: left;
+  }
+  
+  .formulario {
+    display: flex;
+    justify-content: center;
+    padding: 8rem;
+    
+   
+  }
+  
+  .preform {
+    height: 100%;
+    margin-top: 10rem;
+  }
+  
+  .formulario1 {
+    padding: 2rem;
+    display: flex;
+    background-image: linear-gradient(to right, white, rgb(255, 255, 255));
+    box-shadow: 0px 10px 10px 0px;
+    border-radius: 2rem;
+    gap: 3rem;
+  }
+  
+  @media screen and (max-width: 450px) {
+     .formulario1 {display: flex; flex-direction: column;}
+  
+  }
